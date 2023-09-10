@@ -32,6 +32,14 @@ function selectImg(event) {
   const instance = basicLightbox.create(`
   <img src="${largeImg}" alt="${event.target.alt}">`);
   instance.show();
+
+  document.addEventListener("keydown", onEsc);
+  function onEsc(e) {
+    if (e.key === "Escape") {
+      instance.close();
+      document.removeEventListener("keydown", onEsc);
+    }
+  }
 }
 
 console.log(galleryItems);
