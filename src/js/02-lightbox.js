@@ -17,17 +17,10 @@ function createGallery(items) {
     .join("");
 }
 
-galleryContainer.addEventListener("click", selectImg);
-function selectImg(event) {
-  event.preventDefault();
-  const target = event.target;
-  if (target.nodeName !== "IMG") {
-    return;
-  }
-  const lightbox = new SimpleLightbox(`.gallery a`, {
-    captionsData: `alt`,
-    captionPosition: `bottom`,
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox(`.gallery a`, {
+  captionsData: `alt`,
+  captionPosition: `bottom`,
+  captionDelay: 250,
+});
+
 console.log(galleryItems);
